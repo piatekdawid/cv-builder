@@ -82,7 +82,7 @@
 <br>
 <h3>Please add your information below</h3>
 <br>
-<form:form id="form" action="saveExperience" modelAttribute="experience" method="post">
+<form:form id="form" action="" modelAttribute="experience" method="post">
     <form:hidden path="id"/>
 
     <div id="wrapper">
@@ -104,22 +104,21 @@
         <label>Place</label>
         <form:input path="place" class="input-box" type="text" name="place"/>
         <br><br>
-        <input class="submit-button" type="submit" value="Next">
-        <input class="submit-button" type="submit" value="Next">
+        <%--<input class="submit-button" type="submit" value="Next">--%>
+        <input class="submit-button" type="button" value="Next" name="Next" onclick="nextElement()"/>
+        <input class="submit-button" type="button" value="Finish" name="finish" onclick="move()" />
 
     </div>
 </form:form>
-<script>
-    form = document.getElementById("someForm");
-
-    function askForSave() {
-        form.action = "save_for_later.php";
-        form.action = "http://box.sianware.com/echopost.php";
+<script id="script">
+    form = document.getElementById("form");
+    function nextElement() {
+        form.action = "next";
         form.submit();
     }
 
-    function askForSubmit() {
-        form.action = "submit_for_approval.php";
+    function move() {
+        form.action = "move";
         form.submit();
     }
 

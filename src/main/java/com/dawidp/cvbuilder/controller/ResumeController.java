@@ -66,8 +66,15 @@ public class ResumeController {
 
         return "experience";
     }
-    @PostMapping("/saveExperience")
-    public String saveExperience(@ModelAttribute("experience") Experience theExperience){
+    @PostMapping("/next")
+    public String nextEducation(@ModelAttribute("experience") Experience theExperience){
+
+        resumeService.saveExperience(theExperience);
+
+        return "redirect:/showExperience";
+    }
+    @PostMapping("/move")
+    public String move(@ModelAttribute("experience") Experience theExperience){
 
         resumeService.saveExperience(theExperience);
 
