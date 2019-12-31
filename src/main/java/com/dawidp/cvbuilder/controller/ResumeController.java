@@ -41,9 +41,9 @@ public class ResumeController {
     public String savePersonal(@ModelAttribute("person") Person thePerson) {
         resumeService.savePersonal(thePerson);
 
-        return "redirect:/showEducation";
+        return "redirect:/education";
     }
-    @GetMapping("/showEducation")
+    @GetMapping("/education")
     public String saveEducation(Model theModel){
 
         Education theEducation = new Education();
@@ -51,14 +51,47 @@ public class ResumeController {
 
         return "education";
     }
+    @PostMapping("/nextElement")
+    public String nextEducationElement(@ModelAttribute("education") Education theEducation){
+
+        resumeService.saveEducation(theEducation);
+
+        return "redirect:/education";
+    }
     @PostMapping("/saveEducation")
     public String saveEducation(@ModelAttribute("education") Education theEducation){
 
         resumeService.saveEducation(theEducation);
 
-        return "redirect:/showExperience";
+        return "redirect:/experience";
     }
-    @GetMapping("/showExperience")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @GetMapping("/experience")
     public String saveExperience(Model theModel){
 
         Experience theExperience = new Experience();
@@ -67,11 +100,11 @@ public class ResumeController {
         return "experience";
     }
     @PostMapping("/next")
-    public String nextEducation(@ModelAttribute("experience") Experience theExperience){
+    public String nextElement(@ModelAttribute("experience") Experience theExperience){
 
         resumeService.saveExperience(theExperience);
 
-        return "redirect:/showExperience";
+        return "redirect:/experience";
     }
     @PostMapping("/move")
     public String move(@ModelAttribute("experience") Experience theExperience){

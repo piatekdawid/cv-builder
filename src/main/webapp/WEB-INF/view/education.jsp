@@ -30,7 +30,8 @@
             background-color: #3079ED;
             color: white;
         }
-        .input-box{
+
+        .input-box {
             border: 2px solid #3079ED;
             float: left;
             padding: 5px 10px;
@@ -38,16 +39,19 @@
             width: 25%;
             border-radius: 30px;
         }
-        body{
+
+        body {
             background-color: rgba(65, 228, 255, 0.32);
             font-size: 20px;
         }
-        label{
+
+        label {
             float: left;
             width: 100px;
             margin-left: 30%;
         }
-        .submit-button{
+
+        .submit-button {
             display: inline;
             text-align: center;
             margin: 15px 50%;
@@ -57,11 +61,13 @@
             box-shadow: inset 0 1px 0 #80B0FB;
             padding: 5px 20px;
         }
-        #wrapper{
+
+        #wrapper {
             width: 100%;
             margin: 0 auto;
         }
-        h3{
+
+        h3 {
             text-align: center;
         }
     </style>
@@ -69,37 +75,53 @@
 <body>
 <div class="resume-menu">
     <a href="#personal-information">Personal information</a>
-    <a href="#experience">Experience</a>
     <a class="active" href="#education">Education</a>
+    <a href="#experience">Experience</a>
     <a href="#courses">Courses</a>
 </div>
 <br>
 <h3>Please add your information below</h3>
 <br>
-<form:form action="saveEducation" modelAttribute="education" method="post">
+<form:form action="" id="form" modelAttribute="education" method="post">
     <form:hidden path="id"/>
 
     <div id="wrapper">
-    <label>School Name</label>
-    <form:input path="schoolName" class="input-box" type="text" name="schoolName"/>
-    <br><br>
-    <label>School begin</label>
-    <form:input path="startingSchool" class="input-box" type="text" name="startingSchool"/>
-    <br><br>
-    <label>School graduation</label>
-    <form:input path="finishSchool" class="input-box" type="text" name="finishSchool"/>
-    <br><br>
-    <label>Course</label>
-    <form:input path="course" class="input-box" type="text" name="course"/>
-    <br><br>
-    <label>Degree</label>
-    <form:input path="degree" class="input-box" type="text" name="degree"/>
-    <br><br>
-    <label>Additional Information</label>
-    <form:input path="additionalInfo" class="input-box" type="text" name="additionalInfo"/>
-    <br><br>
-    <input class="submit-button" type="submit" value="Next">
+        <label>School Name</label>
+        <form:input path="schoolName" class="input-box" type="text" name="schoolName"/>
+        <br><br>
+        <label>School begin</label>
+        <form:input path="startingSchool" class="input-box" type="text" name="startingSchool"/>
+        <br><br>
+        <label>School graduation</label>
+        <form:input path="finishSchool" class="input-box" type="text" name="finishSchool"/>
+        <br><br>
+        <label>Course</label>
+        <form:input path="course" class="input-box" type="text" name="course"/>
+        <br><br>
+        <label>Degree</label>
+        <form:input path="degree" class="input-box" type="text" name="degree"/>
+        <br><br>
+        <label>Additional Information</label>
+        <form:input path="additionalInfo" class="input-box" type="text" name="additionalInfo"/>
+        <br><br>
+        <input class="submit-button" type="button" value="Next" name="Next" onclick="nextEducationElement()"/>
+        <input class="submit-button" type="button" value="Finish" name="finish" onclick="saveEducation()"/>
+
     </div>
 </form:form>
+<script id="script">
+    form = document.getElementById("form");
+
+    function nextEducationElement() {
+        form.action = "nextElement";
+        form.submit();
+    }
+
+    function saveEducation() {
+        form.action = "saveEducation";
+        form.submit();
+    }
+
+</script>
 </body>
 </html>

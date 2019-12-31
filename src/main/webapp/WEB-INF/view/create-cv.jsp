@@ -69,8 +69,8 @@
 <body>
 <div class="resume-menu">
     <a class="active" href="#personal-information">Personal information</a>
-    <a href="#experience">Experience</a>
     <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
     <a href="#courses">Courses</a>
 </div>
 <br>
