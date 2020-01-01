@@ -71,7 +71,7 @@
     <a class="active" href="#personal-information">Personal information</a>
     <a href="#education">Education</a>
     <a href="#experience">Experience</a>
-    <a href="#courses">Courses</a>
+    <a href="#achievement">Achievement</a>
 </div>
 <br>
 <h3>Please add your information below</h3>

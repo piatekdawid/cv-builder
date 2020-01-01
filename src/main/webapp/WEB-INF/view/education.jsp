@@ -77,10 +77,10 @@
     <a href="#personal-information">Personal information</a>
     <a class="active" href="#education">Education</a>
     <a href="#experience">Experience</a>
-    <a href="#courses">Courses</a>
+    <a href="#achievement">Achievement</a>
 </div>
 <br>
-<h3>Please add your information below</h3>
+<h3>Please add your education below</h3>
 <br>
 <form:form action="" id="form" modelAttribute="education" method="post">
     <form:hidden path="id"/>

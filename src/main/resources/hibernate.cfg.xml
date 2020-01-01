@@ -12,7 +12,7 @@
         <property name="hibernate.current_session_context_class">thread</property>
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-        <mapping class="com.dawidp.cvbuilder.entity.Achievements"/>
+        <mapping class="com.dawidp.cvbuilder.entity.Achievement"/>
         <mapping class="com.dawidp.cvbuilder.entity.Education"/>
         <mapping class="com.dawidp.cvbuilder.entity.Experience"/>
         <mapping class="com.dawidp.cvbuilder.entity.ForeignLanguage"/>

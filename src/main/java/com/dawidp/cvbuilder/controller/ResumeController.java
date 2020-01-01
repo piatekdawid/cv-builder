@@ -1,5 +1,6 @@
 package com.dawidp.cvbuilder.controller;
 
+import com.dawidp.cvbuilder.entity.Achievement;
 import com.dawidp.cvbuilder.entity.Education;
 import com.dawidp.cvbuilder.entity.Experience;
 import com.dawidp.cvbuilder.entity.Person;
@@ -24,7 +25,7 @@ public class ResumeController {
     }
 
     @GetMapping("/error")
-    public String showErrorPage(){
+    public String showErrorPage() {
         return "error";
     }
 
@@ -43,23 +44,26 @@ public class ResumeController {
 
         return "redirect:/education";
     }
+
     @GetMapping("/education")
-    public String saveEducation(Model theModel){
+    public String saveEducation(Model theModel) {
 
         Education theEducation = new Education();
         theModel.addAttribute("education", theEducation);
 
         return "education";
     }
+
     @PostMapping("/nextElement")
-    public String nextEducationElement(@ModelAttribute("education") Education theEducation){
+    public String nextEducationElement(@ModelAttribute("education") Education theEducation) {
 
         resumeService.saveEducation(theEducation);
 
         return "redirect:/education";
     }
+
     @PostMapping("/saveEducation")
-    public String saveEducation(@ModelAttribute("education") Education theEducation){
+    public String saveEducation(@ModelAttribute("education") Education theEducation) {
 
         resumeService.saveEducation(theEducation);
 
@@ -67,49 +71,52 @@ public class ResumeController {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     @GetMapping("/experience")
-    public String saveExperience(Model theModel){
+    public String saveExperience(Model theModel) {
 
         Experience theExperience = new Experience();
         theModel.addAttribute("experience", theExperience);
 
         return "experience";
     }
-    @PostMapping("/next")
-    public String nextElement(@ModelAttribute("experience") Experience theExperience){
+
+    @PostMapping("/nextExperience")
+    public String nextElement(@ModelAttribute("experience") Experience theExperience) {
 
         resumeService.saveExperience(theExperience);
 
         return "redirect:/experience";
     }
-    @PostMapping("/move")
-    public String move(@ModelAttribute("experience") Experience theExperience){
+
+    @PostMapping("/saveExperience")
+    public String move(@ModelAttribute("experience") Experience theExperience) {
 
         resumeService.saveExperience(theExperience);
+
+        return "redirect:/achievement";
+    }
+
+    @GetMapping("/achievement")
+    public String saveAchievement(Model theModel) {
+
+        Achievement theAchievement = new Achievement();
+        theModel.addAttribute("achievement", theAchievement);
+
+        return "achievement";
+    }
+
+    @PostMapping("/nextAchievement")
+    public String nextElement(@ModelAttribute("achievement") Achievement theAchievement) {
+
+        resumeService.saveAchievement(theAchievement);
+
+        return "redirect:/achievement";
+    }
+
+    @PostMapping("/saveAchievement")
+    public String move(@ModelAttribute("achievement") Achievement theAchievement) {
+
+        resumeService.saveAchievement(theAchievement);
 
         return "finish";
     }

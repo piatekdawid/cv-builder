@@ -1,6 +1,7 @@
 package com.dawidp.cvbuilder.service;
 
 import com.dawidp.cvbuilder.dao.ResumeDAO;
+import com.dawidp.cvbuilder.entity.Achievement;
 import com.dawidp.cvbuilder.entity.Education;
 import com.dawidp.cvbuilder.entity.Experience;
 import com.dawidp.cvbuilder.entity.Person;
@@ -23,5 +24,9 @@ public class ResumeService {
 
     public void saveExperience(Experience theExperience) {
         resumeDAO.saveExperience(theExperience);
+    }
+
+    public void saveAchievement(Achievement theAchievement) {
+        resumeDAO.saveAchievement(theAchievement);
     }
 }

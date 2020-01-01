@@ -8,14 +8,12 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class ResumeDAO {
-    int personId;
-    int educationId;
-    int experienceId;
+    private int personId;
 
 
     SessionFactory factory = new Configuration()
             .configure("hibernate.cfg.xml")
-            .addAnnotatedClass(Achievements.class)
+            .addAnnotatedClass(Achievement.class)
             .addAnnotatedClass(Education.class)
             .addAnnotatedClass(Experience.class)
             .addAnnotatedClass(ForeignLanguage.class)
@@ -35,40 +33,29 @@ public class ResumeDAO {
 
     public void saveEducation(Education theEducation) {
         Session currentSession = factory.getCurrentSession();
-        educationId = theEducation.getId();
         currentSession.beginTransaction();
         Person tempPerson = currentSession.get(Person.class, personId);
         theEducation.setPerson(tempPerson);
         currentSession.save(theEducation);
         currentSession.getTransaction().commit();
-        System.out.println("Education id is: " + educationId);
     }
 
     public void saveExperience(Experience theExperience) {
         Session currentSession = factory.getCurrentSession();
-        experienceId = theExperience.getId();
         currentSession.beginTransaction();
         Person tempPerson = currentSession.get(Person.class, personId);
         theExperience.setPerson(tempPerson);
         currentSession.save(theExperience);
         currentSession.getTransaction().commit();
-        System.out.println("Experience id is: " + experienceId);
     }
 
-/*    public void savePersonal(Person thePerson) {
+    public void saveAchievement(Achievement theAchievement) {
         Session currentSession = factory.getCurrentSession();
         currentSession.beginTransaction();
-        currentSession.save(thePerson);
+        Person tempPerson = currentSession.get(Person.class, personId);
+        theAchievement.setPerson(tempPerson);
+        currentSession.save(theAchievement);
         currentSession.getTransaction().commit();
     }
-
-
-    public void saveEducation(Education theEducation) {
-        Session currentSession = factory.getCurrentSession();
-        currentSession.beginTransaction();
-        currentSession.save(theEducation);
-        currentSession.getTransaction().commit();
-    }*/
-
 
 }

@@ -4,8 +4,6 @@ package com.dawidp.cvbuilder.entity;
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.Collection;
-import java.util.Iterator;
 
 @Entity
 @Table(name = "personal_information")
@@ -40,10 +38,10 @@ public class Person {
     private Set<Education> educationSet = new HashSet<>();
 
     @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "person")
-    private Set<Achievements> achievementSet = new HashSet<>();
+    private Set<Experience> experienceSet = new HashSet<>();
 
     @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "person")
-    private Set<Experience> experienceSet = new HashSet<>();
+    private Set<Achievement> achievementSet = new HashSet<>();
 
     @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "person")
     private Set<ForeignLanguage> foreignLanguageSet = new HashSet<>();
@@ -60,7 +58,7 @@ public class Person {
     public Person() {
     }
 
-    public Person(String firstName, String lastName, String address, String zipCode, String city, String email, int phoneNumber, Set<Education> educationSet, Set<Achievements> achievementSet, Set<Experience> experienceSet, Set<ForeignLanguage> foreignLanguageSet, String hobbySet, String skills, String aboutMe) {
+    public Person(String firstName, String lastName, String address, String zipCode, String city, String email, int phoneNumber, Set<Education> educationSet, Set<Achievement> achievementSet, Set<Experience> experienceSet, Set<ForeignLanguage> foreignLanguageSet, String hobbySet, String skills, String aboutMe) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
@@ -150,11 +148,11 @@ public class Person {
         this.educationSet = educationSet;
     }
 
-    public Set<Achievements> getAchievementSet() {
+    public Set<Achievement> getAchievementSet() {
         return achievementSet;
     }
 
-    public void setAchievementSet(Set<Achievements> achievementSet) {
+    public void setAchievementSet(Set<Achievement> achievementSet) {
         this.achievementSet = achievementSet;
     }
 
@@ -206,6 +204,11 @@ public class Person {
     public void addExperience(Experience experience){
         experienceSet.add(experience);
         experience.setPerson(this);
+
+    }
+    public void addAchievement(Achievement achievement){
+        achievementSet.add(achievement);
+        achievement.setPerson(this);
 
     }
 

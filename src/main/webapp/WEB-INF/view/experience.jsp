@@ -77,10 +77,10 @@
     <a href="#personal-information">Personal information</a>
     <a href="#education">Education</a>
     <a class="active"  href="#experience">Experience</a>
-    <a href="#courses">Courses</a>
+    <a href="#achievement">Achievement</a>
 </div>
 <br>
-<h3>Please add your information below</h3>
+<h3>Please add your experience below</h3>
 <br>
 <form:form id="form" action="" modelAttribute="experience" method="post">
     <form:hidden path="id"/>
@@ -113,12 +113,12 @@
 <script id="script">
     form = document.getElementById("form");
     function nextElement() {
-        form.action = "next";
+        form.action = "nextExperience";
         form.submit();
     }
 
     function move() {
-        form.action = "move";
+        form.action = "saveExperience";
         form.submit();
     }
 
