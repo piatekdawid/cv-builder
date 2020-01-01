@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>TEST</title>
+    <title>add experience</title>
     <style>
         .resume-menu {
             background-color: #333;
@@ -29,15 +29,6 @@
         .resume-menu a.active {
             background-color: #3079ED;
             color: white;
-        }
-
-        .input-box {
-            border: 2px solid #3079ED;
-            float: left;
-            padding: 5px 10px;
-            text-align: center;
-            width: 25%;
-            border-radius: 30px;
         }
 
         body {
@@ -76,7 +67,8 @@
 <div class="resume-menu">
     <a href="#personal-information">Personal information</a>
     <a href="#education">Education</a>
-    <a class="active"  href="#experience">Experience</a>
+    <a class="active" href="#experience">Experience</a>
+    <a href="#language">Language</a>
     <a href="#achievement">Achievement</a>
 </div>
 <br>
@@ -104,14 +96,15 @@
         <label>Place</label>
         <form:input path="place" class="input-box" type="text" name="place"/>
         <br><br>
-        <%--<input class="submit-button" type="submit" value="Next">--%>
+            <%--<input class="submit-button" type="submit" value="Next">--%>
         <input class="submit-button" type="button" value="Next" name="Next" onclick="nextElement()"/>
-        <input class="submit-button" type="button" value="Finish" name="finish" onclick="move()" />
+        <input class="submit-button" type="button" value="Finish" name="finish" onclick="move()"/>
 
     </div>
 </form:form>
 <script id="script">
     form = document.getElementById("form");
+
     function nextElement() {
         form.action = "nextExperience";
         form.submit();

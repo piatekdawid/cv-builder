@@ -1,10 +1,7 @@
 package com.dawidp.cvbuilder.service;
 
 import com.dawidp.cvbuilder.dao.ResumeDAO;
-import com.dawidp.cvbuilder.entity.Achievement;
-import com.dawidp.cvbuilder.entity.Education;
-import com.dawidp.cvbuilder.entity.Experience;
-import com.dawidp.cvbuilder.entity.Person;
+import com.dawidp.cvbuilder.entity.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,5 +25,9 @@ public class ResumeService {
 
     public void saveAchievement(Achievement theAchievement) {
         resumeDAO.saveAchievement(theAchievement);
+    }
+
+    public void saveForeignLanguage(ForeignLanguage theForeignLanguage) {
+        resumeDAO.saveForeignLanguage(theForeignLanguage);
     }
 }

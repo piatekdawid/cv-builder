@@ -1,9 +1,6 @@
 package com.dawidp.cvbuilder.controller;
 
-import com.dawidp.cvbuilder.entity.Achievement;
-import com.dawidp.cvbuilder.entity.Education;
-import com.dawidp.cvbuilder.entity.Experience;
-import com.dawidp.cvbuilder.entity.Person;
+import com.dawidp.cvbuilder.entity.*;
 import com.dawidp.cvbuilder.service.ResumeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -92,6 +89,30 @@ public class ResumeController {
     public String move(@ModelAttribute("experience") Experience theExperience) {
 
         resumeService.saveExperience(theExperience);
+
+        return "redirect:/foreignLanguage";
+    }
+    @GetMapping("/foreignLanguage")
+    public String saveForeignLanguage(Model theModel) {
+
+        ForeignLanguage theForeignLanguage = new ForeignLanguage();
+        theModel.addAttribute("foreignLanguage", theForeignLanguage);
+
+        return "foreign-language";
+    }
+
+    @PostMapping("/nextForeignLanguage")
+    public String nextElement(@ModelAttribute("foreignLanguage") ForeignLanguage theForeignLanguage) {
+
+        resumeService.saveForeignLanguage(theForeignLanguage);
+
+        return "redirect:/foreignLanguage";
+    }
+
+    @PostMapping("/saveForeignLanguage")
+    public String move(@ModelAttribute("foreignLanguage") ForeignLanguage theForeignLanguage) {
+
+        resumeService.saveForeignLanguage(theForeignLanguage);
 
         return "redirect:/achievement";
     }

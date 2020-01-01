@@ -11,7 +11,7 @@ public class ResumeDAO {
     private int personId;
 
 
-    SessionFactory factory = new Configuration()
+    private SessionFactory factory = new Configuration()
             .configure("hibernate.cfg.xml")
             .addAnnotatedClass(Achievement.class)
             .addAnnotatedClass(Education.class)
@@ -58,4 +58,12 @@ public class ResumeDAO {
         currentSession.getTransaction().commit();
     }
 
+    public void saveForeignLanguage(ForeignLanguage theForeignLanguage) {
+        Session currentSession = factory.getCurrentSession();
+        currentSession.beginTransaction();
+        Person tempPerson = currentSession.get(Person.class, personId);
+        theForeignLanguage.setPerson(tempPerson);
+        currentSession.save(theForeignLanguage);
+        currentSession.getTransaction().commit();
+    }
 }

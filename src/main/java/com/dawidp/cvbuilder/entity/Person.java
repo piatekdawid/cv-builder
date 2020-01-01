@@ -32,7 +32,7 @@ public class Person {
     private String email;
 
     @Column(name = "phone_number")
-    private int phoneNumber;
+    private String phoneNumber;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "person")
     private Set<Education> educationSet = new HashSet<>();
@@ -58,7 +58,7 @@ public class Person {
     public Person() {
     }
 
-    public Person(String firstName, String lastName, String address, String zipCode, String city, String email, int phoneNumber, Set<Education> educationSet, Set<Achievement> achievementSet, Set<Experience> experienceSet, Set<ForeignLanguage> foreignLanguageSet, String hobbySet, String skills, String aboutMe) {
+    public Person(String firstName, String lastName, String address, String zipCode, String city, String email, String phoneNumber, Set<Education> educationSet, Set<Achievement> achievementSet, Set<Experience> experienceSet, Set<ForeignLanguage> foreignLanguageSet, String hobbySet, String skills, String aboutMe) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
@@ -131,11 +131,11 @@ public class Person {
         this.email = email;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>TEST</title>
+    <title>add education</title>
     <style>
         .resume-menu {
             background-color: #333;
@@ -29,15 +29,6 @@
         .resume-menu a.active {
             background-color: #3079ED;
             color: white;
-        }
-
-        .input-box {
-            border: 2px solid #3079ED;
-            float: left;
-            padding: 5px 10px;
-            text-align: center;
-            width: 25%;
-            border-radius: 30px;
         }
 
         body {
@@ -77,6 +68,7 @@
     <a href="#personal-information">Personal information</a>
     <a class="active" href="#education">Education</a>
     <a href="#experience">Experience</a>
+    <a href="#language">Language</a>
     <a href="#achievement">Achievement</a>
 </div>
 <br>

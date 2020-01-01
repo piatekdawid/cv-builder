@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>TEST</title>
+    <title>Create CV</title>
     <style>
         .resume-menu {
             background-color: #333;
@@ -30,24 +30,19 @@
             background-color: #3079ED;
             color: white;
         }
-        .input-box{
-            border: 2px solid #3079ED;
-            float: left;
-            padding: 5px 10px;
-            text-align: center;
-            width: 25%;
-            border-radius: 30px;
-        }
-        body{
+
+        body {
             background-color: rgba(65, 228, 255, 0.32);
             font-size: 20px;
         }
-        label{
+
+        label {
             float: left;
             width: 100px;
             margin-left: 30%;
         }
-        .submit-button{
+
+        .submit-button {
             display: inline;
             text-align: center;
             margin: 15px 50%;
@@ -57,11 +52,13 @@
             box-shadow: inset 0 1px 0 #80B0FB;
             padding: 5px 20px;
         }
-        .container{
+
+        .container {
             width: 100%;
             margin: 0 auto;
         }
-        h3{
+
+        h3 {
             text-align: center;
         }
     </style>
@@ -71,6 +68,7 @@
     <a class="active" href="#personal-information">Personal information</a>
     <a href="#education">Education</a>
     <a href="#experience">Experience</a>
+    <a href="#language">Language</a>
     <a href="#achievement">Achievement</a>
 </div>
 <br>
@@ -80,28 +78,28 @@
     <form:hidden path="id"/>
 
     <div class="container">
-    <label>First name</label>
-    <form:input path="firstName" class="input-box" type="text" name="firstName"/>
-    <br><br>
-    <label>Last name</label>
-    <form:input path="lastName" class="input-box" type="text" name="lastName"/>
-    <br><br>
-    <label>Address</label>
-    <form:input path="address" class="input-box" type="text" name="address"/>
-    <br><br>
-    <label>Zip code</label>
-    <form:input path="zipCode" class="input-box" type="text" name="zipCode"/>
-    <br><br>
-    <label>City</label>
-    <form:input path="city" class="input-box" type="text" name="city"/>
-    <br><br>
-    <label>Email</label>
-    <form:input path="email" class="input-box" type="text" name="email"/>
-    <br><br>
-    <label>Phone number</label>
-    <form:input path="phoneNumber" class="input-box" type="text" name="phoneNumber"/>
-    <br><br>
-    <input onclick="location.href='education'" class="submit-button" type="submit" value="Next">
+        <label>First name</label>
+        <form:input path="firstName" class="input-box" type="text" name="firstName"/>
+        <br><br>
+        <label>Last name</label>
+        <form:input path="lastName" class="input-box" type="text" name="lastName"/>
+        <br><br>
+        <label>Address</label>
+        <form:input path="address" class="input-box" type="text" name="address"/>
+        <br><br>
+        <label>Zip code</label>
+        <form:input path="zipCode" class="input-box" type="text" name="zipCode"/>
+        <br><br>
+        <label>City</label>
+        <form:input path="city" class="input-box" type="text" name="city"/>
+        <br><br>
+        <label>Email</label>
+        <form:input path="email" class="input-box" type="text" name="email"/>
+        <br><br>
+        <label>Phone number</label>
+        <form:input path="phoneNumber" class="input-box" type="text" name="phoneNumber"/>
+        <br><br>
+        <input onclick="location.href='education'" class="submit-button" type="submit" value="Next">
     </div>
 </form:form>
 </body>

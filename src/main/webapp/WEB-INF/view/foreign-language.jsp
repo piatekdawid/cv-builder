@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>add achievement</title>
+    <title>add language</title>
     <style>
         .resume-menu {
             background-color: #333;
@@ -30,7 +30,6 @@
             background-color: #3079ED;
             color: white;
         }
-
 
         body {
             background-color: rgba(65, 228, 255, 0.32);
@@ -69,27 +68,21 @@
     <a href="#personal-information">Personal information</a>
     <a href="#education">Education</a>
     <a href="#experience">Experience</a>
-    <a href="#language">Language</a>
-    <a class="active" href="#achievement">Achievement</a>
+    <a class="active" href="#language">Language</a>
+    <a href="#achievement">Achievement</a>
 </div>
 <br>
-<h3>Please add your achievement and courses below</h3>
+<h3>Please add your language</h3>
 <br>
-<form:form id="form" action="" modelAttribute="achievement" method="post">
+<form:form id="form" action="" modelAttribute="foreignLanguage" method="post">
     <form:hidden path="id"/>
 
     <div id="wrapper">
-        <label>Date</label>
-        <form:input path="date" class="input-box" type="text" name="date"/>
+        <label>Language</label>
+        <form:input path="language" class="input-box" type="text" name="language"/>
         <br><br>
-        <label>Name</label>
-        <form:input path="name" class="input-box" type="text" name="name"/>
-        <br><br>
-        <label>Place</label>
-        <form:input path="place" class="input-box" type="text" name="place"/>
-        <br><br>
-        <label>Description</label>
-        <form:input path="description" class="input-box" type="text" name="description"/>
+        <label>Proficiency</label>
+        <form:input path="proficiency" class="input-box" type="text" name="proficiency"/>
         <br><br>
             <%--<input class="submit-button" type="submit" value="Next">--%>
         <input class="submit-button" type="button" value="Next" name="Next" onclick="nextElement()"/>
@@ -101,12 +94,12 @@
     form = document.getElementById("form");
 
     function nextElement() {
-        form.action = "nextAchievement";
+        form.action = "nextForeignLanguage";
         form.submit();
     }
 
     function move() {
-        form.action = "saveAchievement";
+        form.action = "saveForeignLanguage";
         form.submit();
     }
 
