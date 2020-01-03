@@ -41,6 +41,14 @@
             width: 100px;
             margin-left: 30%;
         }
+        .input-box{
+            float: left;
+            text-align: center;
+            width: 30%;
+            border: #2F5BB7 solid 1px;
+            border-radius: 8px;
+
+        }
 
         .submit-button {
             display: inline;
@@ -71,6 +79,7 @@
     <a href="#language">Language</a>
     <a href="#achievement">Achievement</a>
 </div>
+<div style="margin: auto; text-align: center; width: 100%;" title="0.00%"><div style="text-align: left; margin: 2px auto; font-size: 0px; line-height: 0px; border: solid 1px #AAAAAA; background: #DDDDDD; overflow: hidden; "><div style="font-size: 0px; line-height: 0px; height: 3px; min-width: 0%; max-width: 0.00%; width: 0.00%; background: #1D3D8D; "><!----></div></div><div style="font-size: 8pt; font-family: monospace; ">0 &#47; 50000</div></div>
 <br>
 <h3>Please add your information below</h3>
 <br>

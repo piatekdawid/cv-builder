@@ -42,6 +42,14 @@
             width: 100px;
             margin-left: 30%;
         }
+        .input-box{
+            float: left;
+            text-align: center;
+            width: 30%;
+            border: #2F5BB7 solid 1px;
+            border-radius: 8px;
+
+        }
 
         .submit-button {
             display: inline;

@@ -66,4 +66,13 @@ public class ResumeDAO {
         currentSession.save(theForeignLanguage);
         currentSession.getTransaction().commit();
     }
+
+    public Person getCv() {
+        Session currentSession = factory.getCurrentSession();
+        currentSession.beginTransaction();
+        Person thePerson = currentSession.get(Person.class, personId);
+        currentSession.getTransaction().commit();
+        return thePerson;
+
+    }
 }

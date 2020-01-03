@@ -1,9 +1,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
-    <title>Final page</title>
+    <title>CV Review</title>
 </head>
 <body>
-<h3>Finally</h3>
+${person.firstName}
+${person.lastName}
+${person.address}
+${person.zipCode}
+${person.city}
+${person.phoneNumber}
+${person.aboutMe}
 </body>
 </html>

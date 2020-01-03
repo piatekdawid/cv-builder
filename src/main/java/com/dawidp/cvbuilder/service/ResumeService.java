@@ -30,4 +30,10 @@ public class ResumeService {
     public void saveForeignLanguage(ForeignLanguage theForeignLanguage) {
         resumeDAO.saveForeignLanguage(theForeignLanguage);
     }
+
+    public Person getCV() {
+        Person thePerson = resumeDAO.getCv();
+        return thePerson;
+    }
+
 }

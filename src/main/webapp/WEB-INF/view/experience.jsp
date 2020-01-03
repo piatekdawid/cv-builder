@@ -52,6 +52,14 @@
             box-shadow: inset 0 1px 0 #80B0FB;
             padding: 5px 20px;
         }
+        .input-box{
+            float: left;
+            text-align: center;
+            width: 30%;
+            border: #2F5BB7 solid 1px;
+            border-radius: 8px;
+
+        }
 
         #wrapper {
             width: 100%;

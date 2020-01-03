@@ -31,7 +31,6 @@ public class ResumeController {
 
         Person thePerson = new Person();
         theModel.addAttribute("person", thePerson);
-
         return "create-cv";
     }
 
@@ -92,6 +91,7 @@ public class ResumeController {
 
         return "redirect:/foreignLanguage";
     }
+
     @GetMapping("/foreignLanguage")
     public String saveForeignLanguage(Model theModel) {
 
@@ -139,7 +139,15 @@ public class ResumeController {
 
         resumeService.saveAchievement(theAchievement);
 
+        return "redirect:/cv-review";
+    }
+
+    @GetMapping("/cv-review")
+    public String getCV(Model theModel) {
+        Person thePerson = resumeService.getCV();
+        theModel.addAttribute("person", thePerson);
         return "finish";
+
     }
 
 
