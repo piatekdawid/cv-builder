@@ -1,10 +1,13 @@
 package com.dawidp.cvbuilder.dao;
 
 import com.dawidp.cvbuilder.entity.*;
+import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.springframework.stereotype.Repository;
+
+import javax.persistence.Query;
 
 @Repository
 public class ResumeDAO {
@@ -71,6 +74,10 @@ public class ResumeDAO {
         Session currentSession = factory.getCurrentSession();
         currentSession.beginTransaction();
         Person thePerson = currentSession.get(Person.class, personId);
+        Hibernate.initialize(thePerson.getEducations());
+        Hibernate.initialize(thePerson.getExperienceSet());
+        Hibernate.initialize(thePerson.getForeignLanguageSet());
+        Hibernate.initialize(thePerson.getAchievementSet());
         currentSession.getTransaction().commit();
         return thePerson;
 

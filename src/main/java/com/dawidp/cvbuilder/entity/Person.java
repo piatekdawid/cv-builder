@@ -196,17 +196,19 @@ public class Person {
         this.aboutMe = aboutMe;
     }
 
-    public void addEducation(Education education){
+    public void addEducation(Education education) {
         educationSet.add(education);
         education.setPerson(this);
 
     }
-    public void addExperience(Experience experience){
+
+    public void addExperience(Experience experience) {
         experienceSet.add(experience);
         experience.setPerson(this);
 
     }
-    public void addAchievement(Achievement achievement){
+
+    public void addAchievement(Achievement achievement) {
         achievementSet.add(achievement);
         achievement.setPerson(this);
 
@@ -214,3 +216,4 @@ public class Person {
 
 
 }
+
