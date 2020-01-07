@@ -178,20 +178,20 @@
 
         label {
             float: left;
-            width: 90px;
+            height: 45px;
+            width: 100px;
             margin-left: 30%;
         }
 
         .input-box {
             float: left;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            margin-top: 25px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
             text-align: center;
-            width: 50%;
+            width: 30%;
             border: #2F5BB7 solid 1px;
             border-radius: 8px;
-
         }
         .input-bigger {
             text-align: left;

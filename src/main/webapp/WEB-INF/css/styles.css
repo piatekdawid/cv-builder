@@ -1,0 +1,124 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+    background-color: #B4B4B4;
+}
+
+hr {
+    margin-right: 10px;
+    border-top: 1px solid #B4B4B4;
+}
+
+h2 {
+    display: block;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0px;
+}
+
+h3 {
+    margin: 0 auto;
+
+}
+
+#document {
+    width: 595px;
+    background: #3B3B3B;
+}
+
+#left-container { /*							LEFT SIDE*/
+    width: 143px;
+    background-color: #172a4e;
+    float: left;
+    height: 840px;
+}
+
+#name {
+    color: white;
+    font-size: 18pt;
+    text-align: center;
+    padding-top: 60px;
+}
+
+#contact {
+    margin-top: 20px;
+    padding: 10px;
+    line-height: 15px;
+    color: white;
+
+}
+
+#languages {
+    margin: 150px 0px 100px 0px;
+    padding: 10px;
+    color: white;
+}
+
+#clause {
+    font-size: 10px;
+    text-align: left;
+    padding: 5px;
+    overflow: auto;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+
+#right-container { /*							RIGHT SIDE*/
+    width: 452px;
+    background-color: white;
+    float: left;
+    height: 840px;
+    border-left: 0;
+}
+
+#about_me {
+    text-align: left;
+    padding: 60px 10px 10px 10px;
+    overflow: auto;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+#experience {
+    text-align: left;
+    padding: 10px;
+    overflow: auto;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+#exp-date {
+    text-align: right;
+    padding-right: 10px;
+}
+
+#education {
+    text-align: left;
+    padding: 10px;
+    overflow: auto;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+#school-time {
+    text-align: right;
+    padding-right: 10px;
+}
+
+#skills {
+    text-align: left;
+    padding: 10px;
+    overflow: auto;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+#hobbys {
+    text-align: left;
+    padding: 10px;
+    overflow: auto;
+    word-wrap: break-word;
+    word-break: break-all;
+}

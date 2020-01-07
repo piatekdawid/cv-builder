@@ -36,11 +36,6 @@
             font-size: 20px;
         }
 
-        label {
-            float: left;
-            width: 100px;
-            margin-left: 30%;
-        }
 
         .submit-button {
             display: inline;
@@ -52,13 +47,23 @@
             box-shadow: inset 0 1px 0 #80B0FB;
             padding: 5px 20px;
         }
-        .input-box{
+
+        label {
             float: left;
+            height: 45px;
+            width: 100px;
+            margin-left: 30%;
+        }
+
+        .input-box {
+            float: left;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
             text-align: center;
             width: 30%;
             border: #2F5BB7 solid 1px;
             border-radius: 8px;
-
         }
 
         #wrapper {
@@ -105,8 +110,8 @@
         <form:input path="place" class="input-box" type="text" name="place"/>
         <br><br>
             <%--<input class="submit-button" type="submit" value="Next">--%>
-        <input class="submit-button" type="button" value="Next" name="Next" onclick="nextElement()"/>
-        <input class="submit-button" type="button" value="Finish" name="finish" onclick="move()"/>
+        <input class="submit-button" type="button" value="Add next" name="Next" onclick="nextElement()"/>
+        <input class="submit-button" type="button" value="Forward" name="finish" onclick="move()"/>
 
     </div>
 </form:form>

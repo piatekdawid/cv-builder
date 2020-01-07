@@ -38,16 +38,20 @@
 
         label {
             float: left;
+            height: 45px;
             width: 100px;
             margin-left: 30%;
         }
-        .input-box{
+
+        .input-box {
             float: left;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
             text-align: center;
             width: 30%;
             border: #2F5BB7 solid 1px;
             border-radius: 8px;
-
         }
 
         .submit-button {
@@ -104,8 +108,8 @@
         <label>Additional Information</label>
         <form:input path="additionalInfo" class="input-box" type="text" name="additionalInfo"/>
         <br><br>
-        <input class="submit-button" type="button" value="Next" name="Next" onclick="nextEducationElement()"/>
-        <input class="submit-button" type="button" value="Finish" name="finish" onclick="saveEducation()"/>
+        <input class="submit-button" type="button" value="Add next" name="Next" onclick="nextEducationElement()"/>
+        <input class="submit-button" type="button" value="Forward" name="finish" onclick="saveEducation()"/>
 
     </div>
 </form:form>

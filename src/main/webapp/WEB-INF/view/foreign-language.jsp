@@ -38,16 +38,20 @@
 
         label {
             float: left;
+            height: 45px;
             width: 100px;
             margin-left: 30%;
         }
-        .input-box{
+
+        .input-box {
             float: left;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
             text-align: center;
             width: 30%;
             border: #2F5BB7 solid 1px;
             border-radius: 8px;
-
         }
 
         .submit-button {
@@ -93,8 +97,8 @@
         <form:input path="proficiency" class="input-box" type="text" name="proficiency"/>
         <br><br>
             <%--<input class="submit-button" type="submit" value="Next">--%>
-        <input class="submit-button" type="button" value="Next" name="Next" onclick="nextElement()"/>
-        <input class="submit-button" type="button" value="Finish" name="finish" onclick="move()"/>
+        <input class="submit-button" type="button" value="Add next" name="Next" onclick="nextElement()"/>
+        <input class="submit-button" type="button" value="Forward" name="finish" onclick="move()"/>
 
     </div>
 </form:form>

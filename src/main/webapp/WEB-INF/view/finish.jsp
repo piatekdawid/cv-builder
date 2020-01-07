@@ -12,7 +12,7 @@
 <body>
 <div id="document">
     <div id="left-container">
-        <div id="photo">
+        <div id="name">
             ${person.firstName} ${person.lastName}
         </div>
         <div id="contact">
@@ -20,13 +20,16 @@
             <hr>
             <b>Address:</b>
             ${person.address}
+            <br>
             ${person.zipCode}
+            <br>
             ${person.city}
             <br><br>
             <b>Mobile phone:</b>
             ${person.phoneNumber}
             <br><br>
             <b>Email:</b>
+            <br>
             ${person.email}
             <br><br>
         </div>
