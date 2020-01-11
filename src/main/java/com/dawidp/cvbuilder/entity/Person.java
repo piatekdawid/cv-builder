@@ -1,9 +1,5 @@
 package com.dawidp.cvbuilder.entity;
 
-import org.springframework.web.multipart.MultipartFile;
-
-import java.sql.Blob;
-
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;

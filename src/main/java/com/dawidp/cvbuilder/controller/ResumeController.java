@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.sql.Blob;
+import java.util.Base64;
 
 @Controller
 public class ResumeController {
@@ -35,13 +35,49 @@ public class ResumeController {
         return "create-cv";
     }
 
-    @PostMapping("/savePersonals")
+/*    @PostMapping("/savePersonals")
     public String savePersonal(@ModelAttribute("person") Person thePerson) {
 
 
         resumeService.savePersonal(thePerson);
         return "redirect:/education";
+    }*/
+
+    @PostMapping("/savePersonals")
+    public String savePersonal(@RequestParam(value = "firstName") String firstName,
+                               @RequestParam(value = "lastName") String lastName,
+                               @RequestParam(value = "address") String address,
+                               @RequestParam(value = "zipCode") String zipCode,
+                               @RequestParam(value = "city") String city,
+                               @RequestParam(value = "phoneNumber") String phoneNumber,
+                               @RequestParam(value = "aboutMe") String aboutMe,
+                               @RequestParam(value = "skills") String skills,
+                               @RequestParam(value = "hobbySet") String hobby,
+                               @RequestParam(value = "email") String email,
+                               @RequestParam(value = "photo") MultipartFile file,
+                               Model model) {
+
+        Person thePerson = new Person();
+        thePerson.setFirstName(firstName);
+        thePerson.setLastName(lastName);
+        thePerson.setAddress(address);
+        thePerson.setZipCode(zipCode);
+        thePerson.setCity(city);
+        thePerson.setPhoneNumber(phoneNumber);
+        thePerson.setAboutMe(aboutMe);
+        thePerson.setSkills(skills);
+        thePerson.setHobbySet(hobby);
+        thePerson.setEmail(email);
+        try {
+            thePerson.setPhoto(file.getBytes());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        resumeService.savePersonal(thePerson);
+        return "redirect:/education";
     }
+
 
     @GetMapping("/education")
     public String saveEducation(Model theModel) {
@@ -147,7 +183,10 @@ public class ResumeController {
     @GetMapping("/cv-review")
     public String getCV(Model theModel) {
         Person thePerson = resumeService.getCV();
+        byte[] photo = (thePerson.getPhoto());
+        String base64String = Base64.getEncoder().encodeToString(photo);
         theModel.addAttribute("person", thePerson);
+        theModel.addAttribute("photo", base64String);
         return "finish";
 
     }

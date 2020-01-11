@@ -16,7 +16,7 @@
             ${person.firstName} ${person.lastName}
         </div>
         <div id="photo">
-            ${person.photo}
+            <img src="data:image/png;base64, ${photo}" alt="No image"/>
         </div>
         <div id="contact">
             <h3>Contact</h3>
