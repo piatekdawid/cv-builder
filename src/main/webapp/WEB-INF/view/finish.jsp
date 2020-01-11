@@ -15,6 +15,9 @@
         <div id="name">
             ${person.firstName} ${person.lastName}
         </div>
+        <div id="photo">
+            ${person.photo}
+        </div>
         <div id="contact">
             <h3>Contact</h3>
             <hr>

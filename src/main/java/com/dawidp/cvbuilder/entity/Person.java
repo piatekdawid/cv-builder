@@ -1,5 +1,8 @@
 package com.dawidp.cvbuilder.entity;
 
+import org.springframework.web.multipart.MultipartFile;
+
+import java.sql.Blob;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -54,6 +57,11 @@ public class Person {
 
     @Column(name = "about_me")
     private String aboutMe;
+
+    @Column(name = "photo")
+    @Lob
+    private byte[] photo;
+
 
     public Person() {
     }
@@ -214,6 +222,13 @@ public class Person {
 
     }
 
+    public byte[] getPhoto() {
+        return photo;
+    }
 
+    public void setPhoto(byte[] photo) {
+        this.photo = photo;
+    }
+    
 }
 

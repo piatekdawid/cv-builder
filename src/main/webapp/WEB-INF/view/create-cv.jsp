@@ -193,6 +193,7 @@
             border: #2F5BB7 solid 1px;
             border-radius: 8px;
         }
+
         .input-bigger {
             text-align: left;
             word-wrap: break-word;
@@ -249,7 +250,7 @@
 <br>
 <h3>Please add your information below</h3>
 <br>
-<form:form action="savePersonals" modelAttribute="person" method="POST">
+<form:form action="savePersonals" modelAttribute="person" method="POST" enctype="multipart/form-data">
     <form:hidden path="id"/>
 
     <div class="container">
@@ -274,6 +275,9 @@
             <br><br>
             <label>Phone number</label>
             <form:input path="phoneNumber" class="input-box" type="text" name="phoneNumber"/>
+            <br><br>
+            <label>CV photo</label>
+            <form:input path="photo" type="file" name="file"/>
             <br><br>
         </div>
         <div id="right-container">
