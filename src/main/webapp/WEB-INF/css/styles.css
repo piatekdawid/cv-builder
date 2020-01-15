@@ -3,6 +3,8 @@
 
 body {
     background-color: #B4B4B4;
+    width: fit-content;
+    height: fit-content;
 }
 
 hr {
@@ -14,7 +16,7 @@ h2 {
     display: block;
     font-size: 25px;
     font-weight: bold;
-    margin: 0px;
+    margin: 0;
 }
 
 h3 {
@@ -22,27 +24,40 @@ h3 {
 
 }
 
-#document {
+p {
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+#doc {
     width: 595px;
     background: #3B3B3B;
 }
 
 #left-container { /*							LEFT SIDE*/
-    width: 143px;
+    width: 144px;
     background-color: #172a4e;
     float: left;
     height: 840px;
+    position: relative;
 }
 
 #name {
     color: white;
     font-size: 18pt;
     text-align: center;
-    padding-top: 60px;
+    padding-top: 55px;
 }
 
 #photo {
     margin: 0 auto;
+    padding: 20px;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
 }
 
 #contact {
@@ -50,28 +65,30 @@ h3 {
     padding: 10px;
     line-height: 15px;
     color: white;
-
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
 #languages {
-    margin-top: 50px;
+    margin-top: 40px;
     padding: 10px;
     color: white;
 }
 
 #clause {
-    font-size: 10px;
+    font-size: 8px;
     text-align: left;
-    bottom: 0px;
     padding: 5px;
     overflow: auto;
     word-wrap: break-word;
     word-break: break-all;
+    position: absolute;
+    bottom: 0;
 }
 
 
 #right-container { /*							RIGHT SIDE*/
-    width: 452px;
+    width: 451px;
     background-color: white;
     float: left;
     height: 840px;
@@ -96,6 +113,7 @@ h3 {
 
 #exp-date {
     text-align: right;
+    float: right;
     padding-right: 10px;
 }
 
@@ -109,6 +127,7 @@ h3 {
 
 #school-time {
     text-align: right;
+    float: right;
     padding-right: 10px;
 }
 

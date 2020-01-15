@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
@@ -10,30 +10,30 @@
 </head>
 
 <body>
-<div id="document">
+<div id="doc">
     <div id="left-container">
         <div id="name">
             ${person.firstName} ${person.lastName}
         </div>
         <div id="photo">
-            <img src="data:image/png;base64, ${photo}" alt="No image"/>
+            <img src="data:image/png;base64, ${photo}" alt=""/>
         </div>
         <div id="contact">
             <h3>Contact</h3>
             <hr>
             <b>Address:</b>
-            ${person.address}
+            <p>${person.address}</p>
             <br>
-            ${person.zipCode}
+            <p>${person.zipCode}</p>
             <br>
-            ${person.city}
+            <p>${person.city}</p>
             <br><br>
             <b>Mobile phone:</b>
-            ${person.phoneNumber}
+            <p>${person.phoneNumber}</p>
             <br><br>
             <b>Email:</b>
             <br>
-            ${person.email}
+            <p>${person.email}</p>
             <br><br>
         </div>
         <div id="languages">
@@ -61,12 +61,14 @@
             <h2>Experience</h2>
             <hr>
             <c:forEach items="${person.experienceSet}" var="list">
-                <div id="exp-date">
-                        ${list.dateStarted}-${list.dateEnded}
+                <div id="exp">
+                    <div id="exp-date">
+                            ${list.dateStarted}-${list.dateEnded}
+                    </div>
+                    <h3>${list.position} ${list.companyName} ${list.place}</h3>
+                        ${list.shortDescription}
                 </div>
-                <h3>${list.position}/${list.companyName}/${list.place}</h3>
                 <br>
-                ${list.shortDescription}
             </c:forEach>
         </div>
 
@@ -74,11 +76,14 @@
             <h2>Education</h2>
             <hr>
             <c:forEach items="${person.educations}" var="list">
-                <div id="school-time">
-                        ${list.startingSchool}-${list.finishSchool}
+                <div id="edu">
+                    <div id="school-time">
+                            ${list.startingSchool}-${list.finishSchool}
+                    </div>
+                    <h3>${list.schoolName} ${list.course} ${list.degree}</h3>
+                        ${list.additionalInfo}
                 </div>
-                <h3>${list.schoolName}${list.course}${list.degree}</h3>
-                ${list.additionalInfo}
+                <br>
             </c:forEach>
         </div>
 
